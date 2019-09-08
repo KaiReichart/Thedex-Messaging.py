@@ -7,14 +7,14 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
     name="Thedex_Messaging",
-    version="0.0.2",
+    version="0.0.3",
     author="Kai Reichart",
     author_email="kai@reichart.dev",
     description="A Package to create Messages for the Thedex_Messaging API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/KaiReichart/Thedex-Messaging.py",
-    download_url="https://github.com/KaiReichart/Thedex-Messaging.py/archive/v0.0.2.tar.gz",
+    url="https://github.com/KaiReichart/Thedex_Messaging.py",
+    download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.0.3.tar.gz",
     packages=setuptools.find_packages(),
     install_requires=[
           'datetime',
