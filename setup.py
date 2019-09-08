@@ -2,19 +2,19 @@ import setuptools
 from os import path
 
 this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setuptools.setup(
     name="Thedex_Messaging",
-    version="0.0.3",
+    version="0.0.4",
     author="Kai Reichart",
     author_email="kai@reichart.dev",
     description="A Package to create Messages for the Thedex_Messaging API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KaiReichart/Thedex_Messaging.py",
-    download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.0.3.tar.gz",
+    download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.0.4.tar.gz",
     packages=setuptools.find_packages(),
     install_requires=[
           'datetime',
