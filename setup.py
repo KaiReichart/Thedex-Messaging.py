@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KaiReichart/Thedex-Messaging.py",
-    download_url="",
+    download_url="https://github.com/KaiReichart/Thedex-Messaging.py/archive/v0.0.1.tar.gz",
     packages=setuptools.find_packages(),
     install_requires=[            # I get to this in a second
           'datetime',
