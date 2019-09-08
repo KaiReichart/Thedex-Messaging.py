@@ -1,7 +1,9 @@
 import setuptools
+from os import path
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setuptools.setup(
     name="Thedex_Messaging",
@@ -14,7 +16,7 @@ setuptools.setup(
     url="https://github.com/KaiReichart/Thedex-Messaging.py",
     download_url="https://github.com/KaiReichart/Thedex-Messaging.py/archive/v0.0.2.tar.gz",
     packages=setuptools.find_packages(),
-    install_requires=[            # I get to this in a second
+    install_requires=[
           'datetime',
       ],
     classifiers=[
