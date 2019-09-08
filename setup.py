@@ -6,12 +6,12 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="Thedex_Messaging",
+    name="ThedexMessaging",
     version="0.0.4",
     author="Kai Reichart",
     author_email="kai@reichart.dev",
-    description="A Package to create Messages for the Thedex_Messaging API",
-    long_description=long_description,
+    description="A Package to create Messages for the Thedex Messaging API",
+    long_description="[See the GitHub Page for more Details](https://github.com/KaiReichart/Thedex_Messaging.py)",
     long_description_content_type="text/markdown",
     url="https://github.com/KaiReichart/Thedex_Messaging.py",
     download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.0.4.tar.gz",
