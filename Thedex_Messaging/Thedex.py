@@ -1,4 +1,5 @@
 from datetime import datetime
+import io
 
 
 class thedexObject(object):
@@ -145,7 +146,7 @@ class Message(thedexObject):
 
 
 class Thedex(thedexObject):
-    CONST_CONFIG_TITLE = "Thedex_Messaging"
+    CONST_CONFIG_TITLE = "Thedex"
     ThedexVersionNumber = ""
 
     def __init__(self) -> None:
@@ -201,6 +202,6 @@ class ThedexMessageBuilder:
 
 
 def writeMessage(filename, content):
-    with open(filename, 'w+') as file:
+    with io.open(filename, 'w+', newline='\r\n', encoding='ansi') as file:
         file.write(content)
         file.close()
