@@ -13,7 +13,7 @@ class thedexObject(object):
                     or key[:6] == "CONST_" \
                     or value == "":
                 continue
-            confString += "{key} = {value}\n".format(key=key, value=value)
+            confString += "{key}={value}\n".format(key=key, value=value)
         if not confString == "":
             return "[{title}]\n".format(title=self.CONST_CONFIG_TITLE) + confString + "\n"
         else:
@@ -153,17 +153,14 @@ class Thedex(thedexObject):
         self.ThedexVersionNumber = "2.1"
 
 
-class ThedexMessageBuilder():
-
-    def __init__(self) -> None:
-        super().__init__()
-
+class ThedexMessageBuilder:
 
     @staticmethod
     def newClientMessage(
             sender: Sender,
             client: ClientData,
             writeFile=None,
+            contract: ContractData = ContractData(),
             message: Message = Message(Message.CONST_MESSAGE_TYPE_CLIENT_NEW),
             thedex: Thedex = Thedex()
     ):
@@ -172,9 +169,38 @@ class ThedexMessageBuilder():
         conf += sender.getAttributesFormatted()
         conf += message.getAttributesFormatted()
         conf += client.getAttributesFormatted()
+        conf += contract.getAttributesFormatted()
 
         if writeFile:
-            with open(writeFile, 'w+') as file:
-                file.write(conf)
-                file.close()
+            writeMessage(writeFile, conf)
         return conf
+
+    @staticmethod
+    def ClientChangeMessage(
+            sender: Sender,
+            client: ClientData,
+            clientChange: ClientData,
+            writeFile=None,
+            contract: ContractData = ContractData(),
+            message: Message = Message(Message.CONST_MESSAGE_TYPE_CLIENT_NEW),
+            thedex: Thedex = Thedex()
+    ):
+        # Set clientChange to proper Config Section
+        clientChange.CONST_CONFIG_TITLE = clientChange.CONST_CONFIG_TITLE_NEW_DATA
+        
+        conf = ""
+        conf += thedex.getAttributesFormatted()
+        conf += sender.getAttributesFormatted()
+        conf += message.getAttributesFormatted()
+        conf += client.getAttributesFormatted()
+        conf += contract.getAttributesFormatted()
+
+        if writeFile:
+            writeMessage(writeFile, conf)
+        return conf
+
+
+def writeMessage(filename, content):
+    with open(filename, 'w+') as file:
+        file.write(content)
+        file.close()

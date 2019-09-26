@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md')) as f:
 
 setuptools.setup(
     name="ThedexMessaging",
-    version="0.1.0",
+    version="0.1.1",
     author="Kai Reichart",
     author_email="kai@reichart.dev",
     description="A Package to create Messages for the Thedex Messaging API",
