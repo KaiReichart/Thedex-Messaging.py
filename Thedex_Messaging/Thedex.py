@@ -202,6 +202,6 @@ class ThedexMessageBuilder:
 
 
 def writeMessage(filename, content):
-    with io.open(filename, 'w+', newline='\r\n', encoding='mbcs') as file:
+    with io.open(filename, 'w+', newline='\r\n') as file:
         file.write(content)
         file.close()
