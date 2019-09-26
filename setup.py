@@ -14,7 +14,7 @@ setuptools.setup(
     long_description="[See the GitHub Page for more Details](https://github.com/KaiReichart/Thedex_Messaging.py)",
     long_description_content_type="text/markdown",
     url="https://github.com/KaiReichart/Thedex_Messaging.py",
-    download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.1.0.tar.gz",
+    download_url="https://github.com/KaiReichart/Thedex_Messaging.py/archive/v0.1.1.tar.gz",
     packages=setuptools.find_packages(),
     install_requires=[
           'datetime',
